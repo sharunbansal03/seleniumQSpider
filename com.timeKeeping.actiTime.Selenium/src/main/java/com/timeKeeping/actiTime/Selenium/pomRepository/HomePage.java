@@ -13,6 +13,7 @@ public class HomePage {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
+	
 
 	@FindBy(id="container_tasks")
 	private WebElement taskButton;

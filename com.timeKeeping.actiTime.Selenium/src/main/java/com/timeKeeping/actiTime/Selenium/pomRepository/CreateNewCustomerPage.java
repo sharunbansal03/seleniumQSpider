@@ -18,6 +18,7 @@ public class CreateNewCustomerPage {
 
 	@FindBy(xpath = "//input[@class='inputFieldWithPlaceholder newNameField inputNameField']")
 	private WebElement customerNameTextField;
+	
 
 	@FindBy(xpath = "//textarea[@placeholder='Enter Customer Description']")
 	private WebElement customerDescriptionTextArea;

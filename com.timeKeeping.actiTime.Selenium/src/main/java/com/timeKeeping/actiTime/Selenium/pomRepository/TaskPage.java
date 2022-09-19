@@ -16,9 +16,6 @@ public class TaskPage {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
-	
-	@FindBy(id="preInsertedTransformedMoireId")
-	private WebElement hiddenInterceptingElement;
 
 	@FindBy(xpath = "//div[text()='Add New']")
 	private WebElement addNewButton;
@@ -39,8 +36,6 @@ public class TaskPage {
 	}
 
 	public void clickNewCustomerButton() {
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(addNewButton));
 		addNewButton.click();
 		newCustomerButton.click();
 	}

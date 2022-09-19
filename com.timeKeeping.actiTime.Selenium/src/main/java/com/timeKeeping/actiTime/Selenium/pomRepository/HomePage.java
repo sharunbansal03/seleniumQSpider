@@ -12,19 +12,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class HomePage {
 	WebDriver driver;
 
-	//Constructor which will load all the findBy during object creation
+	// Constructor which will load all the findBy during object creation
 	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
-	
-	@FindBy(id="preInsertedTransformedMoireId")
+
+	@FindBy(id = "preInsertedTransformedMoireId")
 	private WebElement hiddenInterceptingElement;
-	
-	@FindBy(id="container_tasks")
+
+	@FindBy(id = "container_tasks")
 	private WebElement taskButton;
-	
-	@FindBy(id="logoutLink")
+
+	@FindBy(id = "logoutLink")
 	private WebElement logoutLink;
 
 	public WebDriver getDriver() {
@@ -39,18 +39,12 @@ public class HomePage {
 		return logoutLink;
 	}
 
-	//Business logic
+	// Business logic
 	public void logoutAction() {
 		logoutLink.click();
 	}
-	
+
 	public void clickOnTaskButton() throws InterruptedException {
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, 20);
-		 * wait.until(ExpectedConditions.invisibilityOf(hiddenInterceptingElement));
-		 */
-		WebDriverWait wait = new WebDriverWait(driver, 30);
-		wait.until(ExpectedConditions.elementToBeClickable(taskButton));
 		taskButton.click();
 	}
 }

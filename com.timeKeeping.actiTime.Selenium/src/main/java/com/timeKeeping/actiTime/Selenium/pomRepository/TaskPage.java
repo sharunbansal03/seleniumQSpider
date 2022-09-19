@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TaskPage {
 	WebDriver driver;
@@ -14,6 +16,9 @@ public class TaskPage {
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 	}
+	
+	@FindBy(id="preInsertedTransformedMoireId")
+	private WebElement hiddenInterceptingElement;
 
 	@FindBy(xpath = "//div[text()='Add New']")
 	private WebElement addNewButton;
@@ -34,6 +39,8 @@ public class TaskPage {
 	}
 
 	public void clickNewCustomerButton() {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.invisibilityOf(hiddenInterceptingElement));
 		addNewButton.click();
 		newCustomerButton.click();
 	}

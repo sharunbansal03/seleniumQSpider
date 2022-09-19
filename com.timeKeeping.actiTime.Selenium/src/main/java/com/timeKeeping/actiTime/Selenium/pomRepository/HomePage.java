@@ -46,8 +46,7 @@ public class HomePage {
 	
 	public void clickOnTaskButton() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.invisibilityOfElementLocated((By.id(
-				  "preInsertedTransformedMoireId"))));
+		wait.until(ExpectedConditions.invisibilityOf(hiddenInterceptingElement));
 		
 		taskButton.click();
 	}

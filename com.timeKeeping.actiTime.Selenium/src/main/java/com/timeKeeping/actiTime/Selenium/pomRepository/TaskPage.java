@@ -39,7 +39,7 @@ public class TaskPage {
 	}
 
 	public void clickNewCustomerButton() {
-		WebDriverWait wait = new WebDriverWait(driver, 20);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
 		wait.until(ExpectedConditions.elementToBeClickable(addNewButton));
 		addNewButton.click();
 		newCustomerButton.click();

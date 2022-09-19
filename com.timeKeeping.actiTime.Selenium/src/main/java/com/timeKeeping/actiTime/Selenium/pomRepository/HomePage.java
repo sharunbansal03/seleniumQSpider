@@ -45,9 +45,12 @@ public class HomePage {
 	}
 	
 	public void clickOnTaskButton() throws InterruptedException {
+		/*
+		 * WebDriverWait wait = new WebDriverWait(driver, 20);
+		 * wait.until(ExpectedConditions.invisibilityOf(hiddenInterceptingElement));
+		 */
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.invisibilityOf(hiddenInterceptingElement));
-		
+		wait.until(ExpectedConditions.elementToBeClickable(taskButton));
 		taskButton.click();
 	}
 }

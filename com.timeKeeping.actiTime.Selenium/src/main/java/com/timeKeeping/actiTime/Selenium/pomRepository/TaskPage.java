@@ -40,7 +40,7 @@ public class TaskPage {
 
 	public void clickNewCustomerButton() {
 		WebDriverWait wait = new WebDriverWait(driver, 20);
-		wait.until(ExpectedConditions.invisibilityOf(hiddenInterceptingElement));
+		wait.until(ExpectedConditions.elementToBeClickable(addNewButton));
 		addNewButton.click();
 		newCustomerButton.click();
 	}

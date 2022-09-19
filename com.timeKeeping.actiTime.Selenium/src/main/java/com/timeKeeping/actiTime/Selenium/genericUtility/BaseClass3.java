@@ -24,7 +24,7 @@ public class BaseClass3 {
 	public void bsConfig() {
 		System.out.println("========== Establish database connectivity ===========");
 	}
-
+	
 	@BeforeClass
 	public void bcConfig() throws IOException {
 		System.setProperty("webdriver.chrome.driver", "./src/main/resources/chromedriver.exe");

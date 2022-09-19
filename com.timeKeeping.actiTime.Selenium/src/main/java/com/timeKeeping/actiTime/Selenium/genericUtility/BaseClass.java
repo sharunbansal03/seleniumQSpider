@@ -4,12 +4,15 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Parameters;
+
 import com.timeKeeping.actiTime.Selenium.pomRepository.CreateNewCustomerPage;
 import com.timeKeeping.actiTime.Selenium.pomRepository.HomePage;
 import com.timeKeeping.actiTime.Selenium.pomRepository.LoginPage;
@@ -43,7 +46,6 @@ public class BaseClass {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-
 		initializePages();
 
 		System.out.println("========== The browser has been launched ===========");
@@ -65,13 +67,13 @@ public class BaseClass {
 	@AfterMethod
 	public void amConfig() {
 		// HomePage home = new HomePage(driver);
-		home.logoutAction();
+		// home.logoutAction();
 		System.out.println("========== Log out from the application ===========");
 	}
 
 	@AfterClass(alwaysRun = true)
 	public void acConfig() {
-		driver.quit();
+		// driver.quit();
 		System.out.println("========== Closed the browser ===========");
 	}
 

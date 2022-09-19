@@ -18,9 +18,6 @@ public class HomePage {
 		this.driver = driver;
 	}
 
-	@FindBy(id = "preInsertedTransformedMoireId")
-	private WebElement hiddenInterceptingElement;
-
 	@FindBy(id = "container_tasks")
 	private WebElement taskButton;
 
